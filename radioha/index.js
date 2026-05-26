@@ -198,7 +198,8 @@ function getmbc(ch) {
                 }
             })
             .then(response => {
-                var text = 'https://' + response.data.split('"https://')[1].split('"')[0];
+                // 응답이 URL 문자열로 직접 옴
+                var text = response.data.trim();
                 resolve(text);
             }).catch(e => {
                 console.log(e);
